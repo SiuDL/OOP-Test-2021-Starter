@@ -86,9 +86,15 @@ public class ScoreDisplay extends PApplet
 	}
 
 	void drawNotes(){
+
 		line(150, 210, 150, 375);
 		line(150, 210, 180, 250);
-		fill(0);
-		ellipse(125, 375, 50, 50);
+		if((mouseX >= 100 && mouseY >= 360) || (mouseX <= 130 && mouseY <= 375)){
+			fill(255,0,0);
+			ellipse(125, 375, 50, 50);
+		}else{
+			fill(0);
+			ellipse(125, 375, 50, 50);
+		}
 	}
 }
