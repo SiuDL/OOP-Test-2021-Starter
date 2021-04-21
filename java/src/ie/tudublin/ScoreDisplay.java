@@ -1,5 +1,9 @@
 package ie.tudublin;
 
+// Student ID: C19401596
+// Name: Siu Dzoen Lee
+// Course Code: DT228/TU856
+
 import java.util.ArrayList;
 
 
@@ -37,15 +41,23 @@ public class ScoreDisplay extends PApplet
 					Note notes = new Note(note, dur);
 					noteList.add(notes);
 
-					System.out.println(note +" and "+ dur);
+					// for testing:
+					// System.out.println(note +" and "+ dur);
 				}
 			}
         }
     }
 
+	public void printScores(){
+		for(Note notes : noteList){
+			System.out.println(notes);
+		}
+	}
+
 	public void setup() 
 	{
 		loadScore();
+		printScores();
 	}
 
 	public void draw()
