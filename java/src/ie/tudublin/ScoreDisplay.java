@@ -13,17 +13,17 @@ public class ScoreDisplay extends PApplet
 {
 	ArrayList<Note> noteList = new ArrayList<Note>();
 	//String score = "DEFGABcd";
-	String score = "D2E2F2G2A2B2c2d2";
-	//String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
+	//String score = "D2E2F2G2A2B2c2d2";
+	String score = "DEF2F2F2EFA2A2B2AFD2E2D2D2D2";
 	
 	public void settings()
 	{
 		size(1000, 500);
 
 		// How to convert a character to a number
-		char c = '7'; // c holds the character 7 (55)
-		int i = c - '0'; // i holds the number 7 (55 - 48) 
-		println(i);
+		//char c = '7'; // c holds the character 7 (55)
+		//int i = c - '0'; // i holds the number 7 (55 - 48) 
+		//println(i);
 	}
 
 	public void loadScore(){
@@ -49,8 +49,26 @@ public class ScoreDisplay extends PApplet
     }
 
 	public void printScores(){
+		// for loop to print out notes and duration from Note notes within the noteList ArrayList
 		for(Note notes : noteList){
-			System.out.println(notes);
+			// if statement to check if duration is greater than 1
+			// print out notes, duration and Crotchet otherwise
+			// print out   ''       ''   and Quartet
+			if(notes.getDuration() > 1){
+				System.out.println(notes.getNote()+"\t"+notes.getDuration()+"\tCrotchet");
+			}else{
+				System.out.println(notes.getNote()+"\t"+notes.getDuration()+"\tQuartet");
+			}
+		}
+	}
+
+	public void drawStaves(){
+		int staveLines = 5;
+		int lineY = 70;
+		for(int i = 0; i < staveLines; i++){
+			strokeWeight(5);
+			line(100, lineY, width - 100, lineY);
+			lineY = lineY + 70;
 		}
 	}
 
@@ -63,10 +81,10 @@ public class ScoreDisplay extends PApplet
 	public void draw()
 	{
 		background(255);
-		
+		drawStaves();
 	}
 
-	void drawNotes()
-	{
+	void drawNotes(){
+
 	}
 }
