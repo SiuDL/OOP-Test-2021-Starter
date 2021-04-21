@@ -89,7 +89,7 @@ public class ScoreDisplay extends PApplet
 
 		line(150, 210, 150, 375);
 		line(150, 210, 180, 250);
-		if((mouseX >= 100 && mouseY >= 360) || (mouseX <= 130 && mouseY <= 375)){
+		if((mouseX >= 110 && mouseX <= 140) || (mouseY >= 360 && mouseY <= 370)){
 			fill(255,0,0);
 			ellipse(125, 375, 50, 50);
 		}else{
