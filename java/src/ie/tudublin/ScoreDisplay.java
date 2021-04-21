@@ -53,11 +53,11 @@ public class ScoreDisplay extends PApplet
 		for(Note notes : noteList){
 			// if statement to check if duration is greater than 1
 			// print out notes, duration and Crotchet otherwise
-			// print out   ''       ''   and Quartet
+			// print out   ''       ''   and Quaver
 			if(notes.getDuration() > 1){
 				System.out.println(notes.getNote()+"\t"+notes.getDuration()+"\tCrotchet");
 			}else{
-				System.out.println(notes.getNote()+"\t"+notes.getDuration()+"\tQuartet");
+				System.out.println(notes.getNote()+"\t"+notes.getDuration()+"\tQuaver");
 			}
 		}
 	}
