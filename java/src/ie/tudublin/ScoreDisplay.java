@@ -31,7 +31,7 @@ public class ScoreDisplay extends PApplet
 		int dur = 0;
         for(int i = 0; i < score.length(); i++){
 			note = score.charAt(i);
-			if((score.length()-1>i)){
+			if((score.length()-1!=i)){
 				if(Character.isLetter(note)){
 					if(Character.isDigit(score.charAt(i+1))){
 						dur = score.charAt(i+1) - '0';
@@ -66,7 +66,7 @@ public class ScoreDisplay extends PApplet
 		int staveLines = 5;
 		int lineY = 70;
 		for(int i = 0; i < staveLines; i++){
-			strokeWeight(5);
+			strokeWeight(2);
 			line(100, lineY, width - 100, lineY);
 			lineY = lineY + 70;
 		}
@@ -82,9 +82,13 @@ public class ScoreDisplay extends PApplet
 	{
 		background(255);
 		drawStaves();
+		drawNotes();
 	}
 
 	void drawNotes(){
-
+		line(150, 210, 150, 375);
+		line(150, 210, 180, 250);
+		fill(0);
+		ellipse(125, 375, 50, 50);
 	}
 }
